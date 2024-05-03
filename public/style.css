@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.sect-one {
+  background-color: rgb(67, 198, 255);
+}
+
+.sect-two {
+  background-color: rgb(67, 198, 255);
+}
+
+.sect-three {
+  background-color: aquamarine;
+}
+
+.sect-four {
+  background-color: aquamarine;
+}
+
+.sect-five {
+  background-color: aquamarine;
+}
+
+.sect-six {
+  background-color: aquamarine;
+}/*# sourceMappingURL=style.css.map */
