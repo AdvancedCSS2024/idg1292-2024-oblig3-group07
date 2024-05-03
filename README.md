@@ -3,10 +3,11 @@
 
 # Project Overview
 
-we discussed which goal we wanted to take on and decided to go with goal 9
+we discussed which goal we wanted to take on and decided to go with goal 14
 
 ## brainstorming session
 
+We came up with the idea of making it so the storytelling appears when moving down the ocean.
 
 
 https://www.youtube.com/watch?v=uV8kH5RgSZU scroll effect inspiration
