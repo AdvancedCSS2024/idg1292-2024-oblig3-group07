@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -53,6 +54,30 @@ section {
 .sect-two {
   background-color: rgb(67, 198, 255);
 }
+  
+ .sect-two__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sect-two__info h2 {
+  font-family: "lilita one";
+  font-size: 5vw;
+  color: white;
+}
+.sect-two__info p {
+  font-family: "lilita one";
+  font-size: 3vw;
+  color: white;
+  margin-left: 7vw;
+  margin-right: 7vw;
+}
+.sect-two img {
+  animation: moveWave 3s infinite;
+  width: 110vw;
+}
+
+}
 
 .sect-three {
   background: linear-gradient(to bottom, #0099ff, #004471);
@@ -73,7 +98,13 @@ section {
   margin-left: 7vw;
   margin-top: 3vw;
   z-index: 1;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: hidden;
+  justify-content: space-between;
+  overflow-x: hidden;
 }
+
 .sect-three__fishes {
   display: flex;
   flex-direction: column;
@@ -125,6 +156,12 @@ section {
   left: 3vw;
   top: 8vw;
   z-index: 1;
+
+.sect-six {
+  background: linear-gradient(to bottom, #004471, #00304f);
+  flex-direction: column;
+  justify-content: end;
+
 }
 .ocean-floor #titanic {
   height: 250px;
@@ -162,5 +199,16 @@ section {
   }
   100% {
     transform: translateX(-60vw);
+  }
+}
+@keyframes moveWave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-2vw);
+  }
+  100% {
+    transform: translateX(0);
   }
 }/*# sourceMappingURL=style.css.map */
