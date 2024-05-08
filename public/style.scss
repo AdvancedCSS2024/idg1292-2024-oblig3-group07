@@ -59,50 +59,113 @@ section {
 
 }
 
-
-
 .sect-two {
     background-color: rgb(67, 198, 255);
 }
 
 .sect-three {
-    background: linear-gradient(to bottom, #0099ff, #0172bd);
-    justify-content: space-between;
+    background: linear-gradient(to bottom, #0099ff, #004471);
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
 
-    &__fish1 {
-        width: 10vw;
-        animation: fishSwim 30s linear infinite;
+    h2 {
+        color: white;
+        font-family: 'Lilita one';
+        font-size: 6vw;
+    }
+    
+    p {
+        color: white;
+        font-family: 'Lilita one';
+        font-size: 3vw;
+        margin-right: 7vw;
+        margin-left: 7vw;
+        margin-top: 3vw;
+        z-index: 1;
     }
 
-    &__fish2 {
-        width: 8vw;
-        animation: fishSwim 35s linear infinite;
+    &__fishes {
+
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vw;
+
+        #fish1 {
+            width: 10vw;
+            animation: fishSwim 25s linear infinite;
+            position: relative;
+            top: 17vw;
+            z-index: 2;
+        }
+
+        #fish2 {
+            width: 8vw;
+            animation: fishSwim 35s linear infinite;
+            position: relative;
+            top: 8vw;
+        }
+    }
+
+    #diver {
+        width: 6vw;
+        opacity: 40%;
+        position: relative;
+        left: 20vw;
     }
 }
 
 .sect-four {
-    background: linear-gradient(to bottom, #0172bd, #005995);
-}
-
-.sect-five {
-    background: linear-gradient(to bottom, #005995, #004471);
-}
-
-.sect-six {
     background: linear-gradient(to bottom, #004471, #00304f);
     flex-direction: column;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
 
-    &__titanic {
+    h2 {
+        color: white;
+        font-family: 'Lilita one';
+        font-size: 6vw;
+    }
+
+    p {
+        color: white;
+        font-family: 'Lilita one';
+        font-size: 3vw;
+        margin-right: 7vw;
+        margin-left: 7vw;
+        margin-top: 3vw;
+    }
+}
+
+.ocean-floor {
+
+    #greystone {
+        width: 15vw;
+        position: relative;
+        left: 3vw;
+        top: 8vw;
+        z-index: 1;
+    }
+
+    #titanic {
         height: 250px;
         position: relative;
-        top: 7vw;
+        top: 9vw;
         left: 28vw;
         z-index: 1;
         width: 15vw;
     }
 
-    &__sand {
+    #plasticbottle {
+        width: 6vw;
+        position: relative;
+        top: 7vw;
+        z-index: 1;
+        left: 30vw;
+        transform: rotate(50deg);
+    }
+
+    #sand {
         width: 100vw;
         position: relative;
         z-index: 0;
@@ -121,10 +184,10 @@ section {
 
 @keyframes fishSwim {
     0% {
-        transform: translateX(20vw);
+        transform: translateX(60vw);
     }
 
     100% {
-        transform: translateX(-110vw);
+        transform: translateX(-60vw);
     }
 }
