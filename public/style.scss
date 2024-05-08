@@ -63,7 +63,38 @@ section {
 
 .sect-two {
     background-color: rgb(67, 198, 255);
+    flex-direction: column;
+    width: 100%;
+    overflow-y: hidden;
+    justify-content: space-between;
+    overflow-x: hidden;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+            font-family: 'lilita one';
+            font-size: 5vw;
+            color: white;
+        }
+    
+        p {
+            font-family: 'lilita one';
+            font-size: 3vw;
+            color: white;
+            margin-left: 7vw;
+            margin-right: 7vw;
+        } 
+    }   
+
+    img {
+        animation: moveWave 3s infinite;
+        width: 110vw;
+    }
 }
+
 
 .sect-three {
     background: linear-gradient(to bottom, #0099ff, #0172bd);
@@ -78,14 +109,6 @@ section {
         width: 8vw;
         animation: fishSwim 35s linear infinite;
     }
-}
-
-.sect-four {
-    background: linear-gradient(to bottom, #0172bd, #005995);
-}
-
-.sect-five {
-    background: linear-gradient(to bottom, #005995, #004471);
 }
 
 .sect-six {
@@ -126,5 +149,19 @@ section {
 
     100% {
         transform: translateX(-110vw);
+    }
+}
+
+  
+@keyframes moveWave {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-2vw); 
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
