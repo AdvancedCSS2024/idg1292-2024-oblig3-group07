@@ -56,6 +56,15 @@ section {
 
 .sect-three {
   background: linear-gradient(to bottom, #0099ff, #0172bd);
+  justify-content: space-between;
+}
+.sect-three__fish1 {
+  width: 10vw;
+  animation: fishSwim 30s linear infinite;
+}
+.sect-three__fish2 {
+  width: 8vw;
+  animation: fishSwim 35s linear infinite;
 }
 
 .sect-four {
@@ -91,5 +100,13 @@ section {
   }
   100% {
     transform: translateX(1600px);
+  }
+}
+@keyframes fishSwim {
+  0% {
+    transform: translateX(20vw);
+  }
+  100% {
+    transform: translateX(-110vw);
   }
 }/*# sourceMappingURL=style.css.map */

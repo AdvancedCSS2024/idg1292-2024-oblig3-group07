@@ -67,6 +67,17 @@ section {
 
 .sect-three {
     background: linear-gradient(to bottom, #0099ff, #0172bd);
+    justify-content: space-between;
+
+    &__fish1 {
+        width: 10vw;
+        animation: fishSwim 30s linear infinite;
+    }
+
+    &__fish2 {
+        width: 8vw;
+        animation: fishSwim 35s linear infinite;
+    }
 }
 
 .sect-four {
@@ -104,5 +115,16 @@ section {
     }
     100% {
         transform: translateX(1600px);
+
+    }
+}
+
+@keyframes fishSwim {
+    0% {
+        transform: translateX(20vw);
+    }
+
+    100% {
+        transform: translateX(-110vw);
     }
 }
