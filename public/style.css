@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +22,8 @@ section {
 
 .sect-one {
   background-color: rgb(67, 198, 255);
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
 }
 .sect-one h1 {
   font-size: 5rem;
@@ -31,10 +31,24 @@ section {
   margin-top: 30px;
   margin-left: 80px;
   text-transform: uppercase;
+  text-align: center;
+}
+.sect-one p {
+  font-size: 3rem;
+  font-family: "Lilita one";
+  color: white;
+  margin-top: 17vw;
+  text-align: center;
+}
+.sect-one__header {
+  display: table;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px; /* Adjust the value to add space between the image and text */
+  align-items: center;
 }
 .sect-one__clouds {
-  display: flex;
-  flex-direction: column;
+  display: table-cell;
+  flex-direction: row;
 }
 .sect-one__clouds .cloud1 {
   height: 120px;
@@ -48,14 +62,18 @@ section {
 }
 .sect-one__sun {
   height: 170px;
-  margin-top: 80px;
+  display: table-cell;
 }
 
 .sect-two {
   background-color: rgb(67, 198, 255);
+  flex-direction: column;
+  width: 100%;
+  overflow-y: hidden;
+  justify-content: space-between;
+  overflow-x: hidden;
 }
-  
- .sect-two__info {
+.sect-two__info {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -64,6 +82,8 @@ section {
   font-family: "lilita one";
   font-size: 5vw;
   color: white;
+  margin-bottom: 10vw;
+  margin-top: 6vw;
 }
 .sect-two__info p {
   font-family: "lilita one";
@@ -75,8 +95,6 @@ section {
 .sect-two img {
   animation: moveWave 3s infinite;
   width: 110vw;
-}
-
 }
 
 .sect-three {
@@ -98,13 +116,7 @@ section {
   margin-left: 7vw;
   margin-top: 3vw;
   z-index: 1;
-  flex-direction: column;
-  width: 100%;
-  overflow-y: hidden;
-  justify-content: space-between;
-  overflow-x: hidden;
 }
-
 .sect-three__fishes {
   display: flex;
   flex-direction: column;
@@ -149,21 +161,14 @@ section {
   margin-left: 7vw;
   margin-top: 3vw;
 }
-
-.ocean-floor #greystone {
+.sect-four .ocean-floor #greystone {
   width: 15vw;
   position: relative;
   left: 3vw;
   top: 8vw;
   z-index: 1;
-
-.sect-six {
-  background: linear-gradient(to bottom, #004471, #00304f);
-  flex-direction: column;
-  justify-content: end;
-
 }
-.ocean-floor #titanic {
+.sect-four .ocean-floor #titanic {
   height: 250px;
   position: relative;
   top: 9vw;
@@ -171,7 +176,7 @@ section {
   z-index: 1;
   width: 15vw;
 }
-.ocean-floor #plasticbottle {
+.sect-four .ocean-floor #plasticbottle {
   width: 6vw;
   position: relative;
   top: 7vw;
@@ -179,7 +184,7 @@ section {
   left: 30vw;
   transform: rotate(50deg);
 }
-.ocean-floor #sand {
+.sect-four .ocean-floor #sand {
   width: 100vw;
   position: relative;
   z-index: 0;
@@ -211,4 +216,29 @@ section {
   100% {
     transform: translateX(0);
   }
+}
+@media (max-width: 700px) {
+  h1, h2, p {
+    font-size: 1.5rem;
+  }
+  .sect-one, .sect-two, .sect-three, .sect-four {
+    padding: 10px;
+  }
+  .sect-one h1, .sect-one h2, .sect-two h1, .sect-two h2, .sect-three h1, .sect-three h2, .sect-four h1, .sect-four h2 {
+    font-size: 1.25rem;
+  }
+  .sect-one p, .sect-two p, .sect-three p, .sect-four p {
+    font-size: 1rem;
+  }
+  .sect-one__clouds, .sect-three__fishes, .ocean-floor {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sect-one__clouds img, .sect-three__fishes img, .ocean-floor img {
+    width: 50%;
+    max-height: 100px;
+  }
+}
+.sect-two img, .sect-three #diver, .sect-four img {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

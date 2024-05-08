@@ -23,7 +23,8 @@ section {
 
 .sect-one {
     background-color: rgb(67, 198, 255);
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
 
     h1 {
         font-size: 5rem;
@@ -31,13 +32,29 @@ section {
         margin-top: 30px;
         margin-left: 80px;
         text-transform: uppercase;
+        text-align: center;
 
+    }
+    
+    p{
+        font-size: 3rem;
+        font-family: 'Lilita one';
+        color: white;
+        margin-top: 17vw;
+        text-align: center;
+    }
+
+    &__header{
+        display: table;
+        grid-template-columns: auto 1fr;
+        grid-gap: 10px; /* Adjust the value to add space between the image and text */
+        align-items: center;
     }
 
     &__clouds {
 
-        display: flex;
-        flex-direction: column;
+        display: table-cell;
+        flex-direction: row;
 
         .cloud1 {
             height: 120px;
@@ -54,7 +71,7 @@ section {
 
     &__sun {
         height: 170px;
-        margin-top: 80px;
+        display:table-cell;
     }
 
 }
@@ -76,6 +93,8 @@ section {
             font-family: 'lilita one';
             font-size: 5vw;
             color: white;
+            margin-bottom: 10vw;
+            margin-top: 6vw;
         }
     
         p {
@@ -236,3 +255,35 @@ section {
         transform: translateX(0);
     }
 }
+
+@media (max-width: 700px) {
+    h1, h2, p {
+      font-size: 1.5rem; // Reduserer fontstørrelsen
+    }
+  
+    .sect-one, .sect-two, .sect-three, .sect-four {
+      padding: 10px;
+      h1, h2 {
+        font-size: 1.25rem; // Juster tekststørrelser for overskrifter
+      }
+  
+      p {
+        font-size: 1rem; // Juster tekststørrelser for paragrafer
+      }
+    }
+  
+    .sect-one__clouds, .sect-three__fishes, .ocean-floor {
+      flex-direction: row;
+      flex-wrap: wrap; // Gjør at elementene kan brytes over flere linjer
+  
+      img {
+        width: 50%; // Justerer bildene til å ta halvparten av tilgjengelig bredde
+        max-height: 100px; // Begrenser bildenes høyde
+      }
+    }
+  }
+  
+  // Andre spesifikke tilpasninger for responsivitet
+  .sect-two img, .sect-three #diver, .sect-four img {
+    width: 100%; // Sikrer at bilder ikke overstiger containerens bredde
+  }
