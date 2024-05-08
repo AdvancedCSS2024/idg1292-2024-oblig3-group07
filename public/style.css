@@ -51,7 +51,48 @@ section {
 }
 
 .sect-two {
+  position: relative; /* Viktig: Setter konteksten for absolutt posisjonerte elementer */
   background-color: rgb(67, 198, 255);
+  flex-direction: column;
+  overflow: hidden; /* Hindrer at SVG går utenfor seksjonen */
+}
+
+.sect-two svg {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Sørger for at SVG er bak teksten */
+}
+
+.waves {
+  width: 100%;  /* Sikrer at bølgecontaineren dekker hele bredden av seksjonen */
+  height: 1vh; /* Juster høyden etter behov */
+  bottom: 0;
+  overflow: hidden;
+  justify-content: end;
+}
+
+.back-wave, .front-wave {
+  position: absolute;
+  left: -10%; /* Sentrerer bølgen ved å justere left offset */
+  bottom: 0;
+}
+
+.back-wave {
+  z-index: 0;  /* Lavere z-index for bakbølgen */
+  animation: swingWave 8s ease-in-out infinite;
+  fill: #f3f4f5; /* Lyse bølgefarge */
+  width: 100%;
+
+}
+
+.front-wave {
+  z-index: 2;  /* Høyere z-index for frontbølgen */
+  animation: moveWaveFront 10s ease-in-out infinite alternate;
+  fill: #0099ff; 
+  width: 130vw;
 }
 
 .sect-three {
@@ -92,6 +133,18 @@ section {
   width: 100vw;
   position: relative;
   z-index: 0;
+}
+
+@keyframes moveWaveFront {
+  0%, 100% { transform: translateX(0); }
+  40% { transform: translateX(10%); } /* Juster for mer eller mindre bevegelse */
+}
+
+@keyframes swingWave {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-5%) rotate(-2deg); }
+  50% { transform: translateY(0) rotate(0); }
+  75% { transform: translateY(5%) rotate(2deg); }
 }
 
 @keyframes cloudGlide {
