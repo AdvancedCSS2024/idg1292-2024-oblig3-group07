@@ -7,15 +7,18 @@
 }
 
 .container {
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
-    overflow-y: scroll;
     height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
 }
 
 section {
     height: 100vh;
     display: flex;
     scroll-snap-align: start;
+    width: 100%;
 }
 
 .sect-one {
@@ -45,7 +48,7 @@ section {
         .cloud2 {
             height: 120px;
             margin-top: 40px;
-            animation: cloudGlide 55s linear infinite;
+            animation: cloudGlide 50s linear infinite;
         }
     }
 
@@ -82,9 +85,10 @@ section {
     &__titanic {
         height: 250px;
         position: relative;
-        top: 5vw;
+        top: 7vw;
         left: 28vw;
         z-index: 1;
+        width: 15vw;
     }
 
     &__sand {
@@ -99,6 +103,6 @@ section {
         transform: translateX(-850px);
     }
     100% {
-        transform: translateX(2000px);
+        transform: translateX(1600px);
     }
 }
