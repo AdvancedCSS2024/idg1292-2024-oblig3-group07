@@ -74,6 +74,3 @@ our script makes it so the `<p>` element appaers when the user has scrolled down
    }
 
 
-
-
-https://www.youtube.com/watch?v=uV8kH5RgSZU scroll effect inspiration
