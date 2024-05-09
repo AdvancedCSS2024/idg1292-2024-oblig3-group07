@@ -25,30 +25,41 @@ section {
   align-items: center;
   flex-direction: column;
 }
-.sect-one h1 {
-  font-size: 5rem;
+.sect-one a {
+  text-decoration: none;
+}
+.sect-one a h1 {
+  font-size: 9vw;
   font-family: "Lilita one";
-  margin-top: 30px;
-  margin-left: 80px;
   text-transform: uppercase;
   text-align: center;
+  color: #046190;
 }
 .sect-one p {
-  font-size: 3rem;
+  font-size: 3vw;
   font-family: "Lilita one";
   color: white;
-  margin-top: 17vw;
+  margin-top: 10vw;
   text-align: center;
+  margin-right: 7vw;
+  margin-left: 7vw;
+}
+.sect-one h2 {
+  font-size: 4vw;
+  font-family: "Lilita one";
+  color: white;
 }
 .sect-one__header {
-  display: table;
-  grid-template-columns: auto 1fr;
-  grid-gap: 10px; /* Adjust the value to add space between the image and text */
+  display: flex;
   align-items: center;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  justify-content: space-evenly;
+  width: 100%;
 }
 .sect-one__clouds {
-  display: table-cell;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
 }
 .sect-one__clouds .cloud1 {
   height: 120px;
@@ -57,21 +68,20 @@ section {
 }
 .sect-one__clouds .cloud2 {
   height: 120px;
-  margin-top: 40px;
+  margin-top: 70px;
   animation: cloudGlide 50s linear infinite;
 }
-.sect-one__sun {
+.sect-one #sun {
   height: 170px;
   display: table-cell;
+  margin-top: 3vw;
 }
 
 .sect-two {
   background-color: rgb(67, 198, 255);
   flex-direction: column;
-  width: 100%;
   overflow-y: hidden;
   justify-content: space-between;
-  overflow-x: hidden;
 }
 .sect-two__info {
   display: flex;
@@ -94,7 +104,7 @@ section {
 }
 .sect-two img {
   animation: moveWave 3s infinite;
-  width: 110vw;
+  width: 100vw;
 }
 
 .sect-three {
@@ -137,7 +147,7 @@ section {
 }
 .sect-three #diver {
   width: 6vw;
-  opacity: 40%;
+  opacity: 30%;
   position: relative;
   left: 20vw;
 }
@@ -161,6 +171,12 @@ section {
   margin-left: 7vw;
   margin-top: 3vw;
 }
+.sect-four p a {
+  color: white;
+}
+.sect-four p a:hover {
+  color: lightgrey;
+}
 .sect-four .ocean-floor #greystone {
   width: 15vw;
   position: relative;
@@ -169,7 +185,6 @@ section {
   z-index: 1;
 }
 .sect-four .ocean-floor #titanic {
-  height: 250px;
   position: relative;
   top: 9vw;
   left: 28vw;
@@ -192,10 +207,10 @@ section {
 
 @keyframes cloudGlide {
   0% {
-    transform: translateX(-850px);
+    transform: translateX(-95vw);
   }
   100% {
-    transform: translateX(1600px);
+    transform: translateX(80vw);
   }
 }
 @keyframes fishSwim {
@@ -208,37 +223,73 @@ section {
 }
 @keyframes moveWave {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-2vw);
+    transform: translateY(1vw);
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 @media (max-width: 700px) {
-  h1, h2, p {
+  h2,
+  p {
     font-size: 1.5rem;
   }
-  .sect-one, .sect-two, .sect-three, .sect-four {
-    padding: 10px;
+  .sect-one__header,
+  .sect-two__header,
+  .sect-three__header,
+  .sect-four__header {
+    flex-direction: column;
   }
-  .sect-one h1, .sect-one h2, .sect-two h1, .sect-two h2, .sect-three h1, .sect-three h2, .sect-four h1, .sect-four h2 {
-    font-size: 1.25rem;
+  .sect-one__header h1,
+  .sect-two__header h1,
+  .sect-three__header h1,
+  .sect-four__header h1 {
+    position: relative;
+    top: 30vw;
+    z-index: 1;
   }
-  .sect-one p, .sect-two p, .sect-three p, .sect-four p {
-    font-size: 1rem;
+  .sect-one__header #sun,
+  .sect-two__header #sun,
+  .sect-three__header #sun,
+  .sect-four__header #sun {
+    display: none;
   }
-  .sect-one__clouds, .sect-three__fishes, .ocean-floor {
+  .sect-one h2,
+  .sect-two h2,
+  .sect-three h2,
+  .sect-four h2 {
+    font-size: 2rem;
+    margin-top: 5vw;
+  }
+  .sect-one p,
+  .sect-two p,
+  .sect-three p,
+  .sect-four p {
+    font-size: 8vw;
+  }
+  .sect-one #wave,
+  .sect-two #wave,
+  .sect-three #wave,
+  .sect-four #wave {
+    width: 100vw;
+  }
+  .sect-one__clouds,
+  .sect-three__fishes,
+  .ocean-floor {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .sect-one__clouds img, .sect-three__fishes img, .ocean-floor img {
+  .sect-one__clouds img,
+  .sect-three__fishes img,
+  .ocean-floor img {
     width: 50%;
     max-height: 100px;
   }
 }
-.sect-two img, .sect-three #diver, .sect-four img {
+.sect-two img,
+.sect-four img {
   width: 100%;
 }/*# sourceMappingURL=style.css.map */

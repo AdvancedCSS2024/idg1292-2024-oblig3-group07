@@ -3,7 +3,7 @@
 
 # Project Overview
 
-we discussed which goal we wanted to take on and decided to go with goal 14
+we discussed which goal we wanted to take on and decided to go with goal 14, 
 
 ## brainstorming session
 

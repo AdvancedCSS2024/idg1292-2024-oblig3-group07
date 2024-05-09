@@ -26,35 +26,47 @@ section {
     align-items: center;
     flex-direction: column;
 
-    h1 {
-        font-size: 5rem;
-        font-family: 'Lilita one';
-        margin-top: 30px;
-        margin-left: 80px;
-        text-transform: uppercase;
-        text-align: center;
+    a {
+        text-decoration: none;
 
+        h1 {
+            font-size: 9vw;
+            font-family: 'Lilita one';
+            text-transform: uppercase;
+            text-align: center;
+            color: #046190;
+        }
     }
-    
-    p{
-        font-size: 3rem;
+
+    p {
+        font-size: 3vw;
         font-family: 'Lilita one';
         color: white;
-        margin-top: 17vw;
+        margin-top: 10vw;
         text-align: center;
+        margin-right: 7vw;
+        margin-left: 7vw;
     }
 
-    &__header{
-        display: table;
-        grid-template-columns: auto 1fr;
-        grid-gap: 10px; /* Adjust the value to add space between the image and text */
+    h2 {
+        font-size: 4vw;
+        font-family: 'Lilita one';
+        color: white;
+    }
+
+    &__header {
+        display: flex;
         align-items: center;
+        margin-left: 7vw;
+        margin-right: 7vw;
+        justify-content: space-evenly;
+        width: 100%;
     }
 
     &__clouds {
 
-        display: table-cell;
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
 
         .cloud1 {
             height: 120px;
@@ -64,14 +76,15 @@ section {
 
         .cloud2 {
             height: 120px;
-            margin-top: 40px;
+            margin-top: 70px;
             animation: cloudGlide 50s linear infinite;
         }
     }
 
-    &__sun {
+    #sun {
         height: 170px;
-        display:table-cell;
+        display: table-cell;
+        margin-top: 3vw;
     }
 
 }
@@ -79,10 +92,8 @@ section {
 .sect-two {
     background-color: rgb(67, 198, 255);
     flex-direction: column;
-    width: 100%;
     overflow-y: hidden;
     justify-content: space-between;
-    overflow-x: hidden;
 
     &__info {
         display: flex;
@@ -96,19 +107,19 @@ section {
             margin-bottom: 10vw;
             margin-top: 6vw;
         }
-    
+
         p {
             font-family: 'lilita one';
             font-size: 3vw;
             color: white;
             margin-left: 7vw;
             margin-right: 7vw;
-        } 
-    }   
+        }
+    }
 
     img {
         animation: moveWave 3s infinite;
-        width: 110vw;
+        width: 100vw;
     }
 }
 
@@ -124,7 +135,7 @@ section {
         font-family: 'Lilita one';
         font-size: 6vw;
     }
-    
+
     p {
         color: white;
         font-family: 'Lilita one';
@@ -159,7 +170,7 @@ section {
 
     #diver {
         width: 6vw;
-        opacity: 40%;
+        opacity: 30%;
         position: relative;
         left: 20vw;
     }
@@ -184,50 +195,59 @@ section {
         margin-right: 7vw;
         margin-left: 7vw;
         margin-top: 3vw;
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            color: lightgrey;
+        }
     }
-    
+
     .ocean-floor {
 
-      #greystone {
-          width: 15vw;
-          position: relative;
-          left: 3vw;
-          top: 8vw;
-          z-index: 1;
-      }
+        #greystone {
+            width: 15vw;
+            position: relative;
+            left: 3vw;
+            top: 8vw;
+            z-index: 1;
+        }
 
-      #titanic {
-          height: 250px;
-          position: relative;
-          top: 9vw;
-          left: 28vw;
-          z-index: 1;
-          width: 15vw;
-      }
+        #titanic {
 
-      #plasticbottle {
-          width: 6vw;
-          position: relative;
-          top: 7vw;
-          z-index: 1;
-          left: 30vw;
-          transform: rotate(50deg);
-      }
+            position: relative;
+            top: 9vw;
+            left: 28vw;
+            z-index: 1;
+            width: 15vw;
+        }
 
-      #sand {
-          width: 100vw;
-          position: relative;
-          z-index: 0;
-      }
-   }
+        #plasticbottle {
+            width: 6vw;
+            position: relative;
+            top: 7vw;
+            z-index: 1;
+            left: 30vw;
+            transform: rotate(50deg);
+        }
+
+        #sand {
+            width: 100vw;
+            position: relative;
+            z-index: 0;
+        }
+    }
 }
 
 @keyframes cloudGlide {
     0% {
-        transform: translateX(-850px);
+        transform: translateX(-95vw);
     }
+
     100% {
-        transform: translateX(1600px);
+        transform: translateX(80vw);
 
     }
 }
@@ -242,48 +262,78 @@ section {
     }
 }
 
-  
+
 @keyframes moveWave {
     0% {
-      transform: translateX(0);
+        transform: translateY(0);
     }
+
     50% {
-      transform: translateX(-2vw); 
+        transform: translateY(1vw);
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
 @media (max-width: 700px) {
-    h1, h2, p {
-      font-size: 1.5rem; // Reduserer fontstørrelsen
+
+    h2,
+    p {
+        font-size: 1.5rem; // Reduserer fontstørrelsen
     }
-  
-    .sect-one, .sect-two, .sect-three, .sect-four {
-      padding: 10px;
-      h1, h2 {
-        font-size: 1.25rem; // Juster tekststørrelser for overskrifter
-      }
-  
-      p {
-        font-size: 1rem; // Juster tekststørrelser for paragrafer
-      }
+
+    .sect-one,
+    .sect-two,
+    .sect-three,
+    .sect-four {
+
+        &__header {
+
+            flex-direction: column;
+
+            h1 {
+                position: relative;
+                top: 30vw;
+                z-index: 1;
+            }
+
+            #sun {
+                display: none;
+            }
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 5vw;
+        }
+
+        p {
+            font-size: 8vw;
+        }
+
+        #wave {
+            width: 100vw;
+        }
+
     }
-  
-    .sect-one__clouds, .sect-three__fishes, .ocean-floor {
-      flex-direction: row;
-      flex-wrap: wrap; // Gjør at elementene kan brytes over flere linjer
-  
-      img {
-        width: 50%; // Justerer bildene til å ta halvparten av tilgjengelig bredde
-        max-height: 100px; // Begrenser bildenes høyde
-      }
+
+    .sect-one__clouds,
+    .sect-three__fishes,
+    .ocean-floor {
+        flex-direction: row;
+        flex-wrap: wrap; // Gjør at elementene kan brytes over flere linjer
+
+        img {
+            width: 50%; // Justerer bildene til å ta halvparten av tilgjengelig bredde
+            max-height: 100px; // Begrenser bildenes høyde
+        }
     }
-  }
-  
-  // Andre spesifikke tilpasninger for responsivitet
-  .sect-two img, .sect-three #diver, .sect-four img {
+}
+
+// Andre spesifikke tilpasninger for responsivitet
+.sect-two img,
+.sect-four img {
     width: 100%; // Sikrer at bilder ikke overstiger containerens bredde
-  }
+}
