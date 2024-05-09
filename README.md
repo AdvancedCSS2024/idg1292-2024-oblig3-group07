@@ -11,11 +11,68 @@ We came up with the idea of making it so the storytelling appears when moving do
 
 ## Storyboard
 
-
+![paper with a storyboard for the website](/public/assets/storyboard.pdf "storyboard")
 
 ## Instructions
 
 The site is quite easy to navigate since it is only up and down. One scroll downwards will automatically take you to the next section, same goes for scrolling upwards, just make sure to read the text before scrolling.
+
+## Techonology 
+
+### Animations
+
+@keyframes cloudGlide {
+    0% {
+        transform: translateX(-95vw);
+    }
+
+    100% {
+        transform: translateX(80vw);
+
+    }
+}
+
+@keyframes fishSwim {
+    0% {
+        transform: translateX(60vw);
+    }
+
+    100% {
+        transform: translateX(-60vw);
+    }
+}
+
+
+@keyframes moveWave {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(1vw);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+these are all animations which make the selected element move in certain direction. we did not want everything to move the same which is why we made different types of movement for the different elements.
+
+our script makes it so the `<p>` element appaers when the user has scrolled down the page, we do this by adding **active** to the class which then triggers a css tranformation. here is how we set up the css.
+
+.reveal{
+    position: SpeechRecognitionAlternative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 3s ease;
+   }
+   
+.reveal.active{
+       transform: translate(0px);
+       opacity: 1;
+   }
+
 
 
 
