@@ -11,7 +11,7 @@ We came up with the idea of making it so the storytelling appears when moving do
 
 ## Storyboard
 
-![paper with a storyboard for the website](assets/storyboard.pdf "storyboard")
+![paper with a storyboard for the website](assets/storyboard.pdf "storyboard") the markings on the sides of the site represents the margin for the `P` elements.
 
 ## Instructions
 
@@ -74,6 +74,3 @@ our script makes it so the `<p>` element appaers when the user has scrolled down
    }
 
 
-
-
-https://www.youtube.com/watch?v=uV8kH5RgSZU scroll effect inspiration
