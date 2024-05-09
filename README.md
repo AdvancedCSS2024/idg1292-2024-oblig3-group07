@@ -3,11 +3,20 @@
 
 # Project Overview
 
-we discussed which goal we wanted to take on and decided to go with goal 14, 
+we discussed which goal we wanted to take on and decided to go with goal 14. We wanted the storytelling to be short and precise which we hope would make the user interested. The initial goal is to make the user more interested so they click the read more link which links to the UN´s own website, which goes a bit more into to detail for the specially interested. The way we make it interesting is by having a storytelling website which talks about the important parts.
 
 ## brainstorming session
 
-We came up with the idea of making it so the storytelling appears when moving down the ocean.
+We came up with the idea of making it so the storytelling appears when moving down the ocean. The brainstorming session was very short so we both agreed pretty quickly how we wanted to handle this project
+
+## Storyboard
+
+
+
+## Instructions
+
+The site is quite easy to navigate since it is only up and down. One scroll downwards will automatically take you to the next section, same goes for scrolling upwards, just make sure to read the text before scrolling.
+
 
 
 https://www.youtube.com/watch?v=uV8kH5RgSZU scroll effect inspiration
