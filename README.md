@@ -11,7 +11,7 @@ We came up with the idea of making it so the storytelling appears when moving do
 
 ## Storyboard
 
-![paper with a storyboard for the website](/public/assets/storyboard.pdf "storyboard")
+![paper with a storyboard for the website](assets/storyboard.pdf "storyboard")
 
 ## Instructions
 
