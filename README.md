@@ -15,7 +15,7 @@ We came up with the idea of making it so the storytelling appears when moving do
 
 ## Instructions
 
-The site is quite easy to navigate since it is only up and down. One scroll downwards will automatically take you to the next section, same goes for scrolling upwards, just make sure to read the text before scrolling. Have not been able to acces github pages which is why we have not added a link
+The site is quite easy to navigate since it is only up and down. One scroll downwards will automatically take you to the next section, same goes for scrolling upwards, just make sure to read the text before scrolling. Link to [pages](https://advancedcss2024.github.io/idg1292-2024-oblig3-group07/)
 
 ## Techonology 
 
