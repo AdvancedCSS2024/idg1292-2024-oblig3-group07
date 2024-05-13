@@ -102,6 +102,7 @@ section {
   color: white;
   margin-left: 7vw;
   margin-right: 7vw;
+  animation: moveWave 5s infinite;
 }
 .sect-two img {
   animation: moveWave 3s infinite;
@@ -109,7 +110,7 @@ section {
 }
 
 .sect-three {
-  background: linear-gradient(to bottom, #0099ff, #004471);
+  background: linear-gradient(to bottom, #0099ff, #015892);
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
@@ -154,17 +155,24 @@ section {
 }
 
 .sect-four {
+  background: linear-gradient(to bottom, #015892, #004471);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sect-five {
   background: linear-gradient(to bottom, #004471, #00304f);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.sect-four h2 {
+.sect-five h2 {
   color: white;
   font-family: "Lilita one";
   font-size: 6vw;
 }
-.sect-four p {
+.sect-five p {
   color: white;
   font-family: "Lilita one";
   font-size: 3vw;
@@ -172,27 +180,27 @@ section {
   margin-left: 7vw;
   margin-top: 3vw;
 }
-.sect-four p a {
+.sect-five p a {
   color: white;
 }
-.sect-four p a:hover {
+.sect-five p a:hover {
   color: lightgrey;
 }
-.sect-four .ocean-floor #greystone {
+.sect-five .ocean-floor #greystone {
   width: 15vw;
   position: relative;
   left: 3vw;
   top: 8vw;
   z-index: 1;
 }
-.sect-four .ocean-floor #titanic {
+.sect-five .ocean-floor #titanic {
   position: relative;
   top: 9vw;
   left: 28vw;
   z-index: 1;
   width: 15vw;
 }
-.sect-four .ocean-floor #plasticbottle {
+.sect-five .ocean-floor #plasticbottle {
   width: 6vw;
   position: relative;
   top: 7vw;
@@ -200,7 +208,7 @@ section {
   left: 30vw;
   transform: rotate(50deg);
 }
-.sect-four .ocean-floor #sand {
+.sect-five .ocean-floor #sand {
   width: 100vw;
   position: relative;
   z-index: 0;
@@ -213,7 +221,7 @@ section {
   transition: all 3s ease;
 }
 
-.reveal.active {
+.reveal.visible {
   transform: translate(0px);
   opacity: 1;
 }

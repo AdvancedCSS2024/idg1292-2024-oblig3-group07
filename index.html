@@ -59,6 +59,10 @@
     </section>
 
     <section class="sect-four">
+
+    </section>
+
+    <section class="sect-five">
       <h2>Make a change</h2>
       <p class="reveal">
         We all have a role in protecting oceans. Reduce plastic use, support
@@ -74,25 +78,27 @@
       </div>
     </section>
   </div>
-  <script type="text/javascript">
-
-    window.addEventListener('wheel', reveal);
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        root: null, // observing relative to the viewport
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the element is visible
+      });
   
-    function reveal() {
-      var reveals = document.querySelectorAll('.reveal');
-  
-      for (var i = 0; i < reveals.length; i++) {
-
-        var windowheight = window.innerHeight;
-        var revealtop = reveals[i].getBoundingClientRect().top;
-        var revealpoint = 800;
-  
-        if (revealtop < windowheight + revealpoint) {
-          reveals[i].classList.add('active')
-        }
-      }
-    }
-  </script>
+      // Target elements with 'reveal' class
+      const targets = document.querySelectorAll('.reveal');
+      targets.forEach(target => {
+        observer.observe(target);
+      });
+    });
+  </script>  
 </body>
 
 </html>
