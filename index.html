@@ -105,12 +105,7 @@
     </section>
 
     <section class="sect-four">
-      <h2>Microplastics</h2>
-      <p class="reveal">Microplastics, which are small plastic pieces less than five millimeters in length, can come from a variety of
-        sources, including from larger plastic debris that degrades into smaller and smaller pieces. Microplastics have
-        been found in tap water, bottled water, sea salt, and they can enter the human food chain through seafood and
-        other food products.</p>
-      <hr class="reveal">
+
     </section>
 
     <section class="sect-five">
@@ -140,16 +135,16 @@
       }, {
         root: null, // observing relative to the viewport
         rootMargin: '0px',
-        threshold: 0.8 // Trigger when 80% of the element is visible
+        threshold: 0.5 // Trigger when 50% of the element is visible
       });
-
+  
       // Target elements with 'reveal' class
       const targets = document.querySelectorAll('.reveal');
       targets.forEach(target => {
         observer.observe(target);
       });
     });
-  </script>
+  </script>  
 </body>
 
 </html>
