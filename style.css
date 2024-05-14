@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lilita one";
 }
 
 .container {
@@ -20,6 +21,20 @@ section {
   width: 100%;
 }
 
+p {
+  margin-left: 7vw;
+  margin-right: 7vw;
+  color: white;
+  font-size: 3vw;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  font-size: 6vw;
+  margin-top: 5vw;
+}
+
 .sect-one {
   background-color: rgb(67, 198, 255);
   align-items: center;
@@ -30,24 +45,13 @@ section {
 }
 .sect-one a h1 {
   font-size: 9vw;
-  font-family: "Lilita one";
   text-transform: uppercase;
   text-align: center;
   color: #046190;
+  z-index: 1;
 }
 .sect-one p {
-  font-size: 3vw;
-  font-family: "Lilita one";
-  color: white;
-  margin-top: 10vw;
-  text-align: center;
-  margin-right: 7vw;
-  margin-left: 7vw;
-}
-.sect-one h2 {
-  font-size: 4vw;
-  font-family: "Lilita one";
-  color: white;
+  margin-top: 5vw;
 }
 .sect-one__header {
   display: flex;
@@ -82,7 +86,7 @@ section {
   flex-direction: column;
   overflow-y: hidden;
   justify-content: space-between;
-  background-attachment: local, local, scroll, scroll;
+  position: relative;
 }
 .sect-two__info {
   display: flex;
@@ -90,23 +94,27 @@ section {
   flex-direction: column;
 }
 .sect-two__info h2 {
-  font-family: "lilita one";
-  font-size: 5vw;
-  color: white;
   margin-bottom: 10vw;
   margin-top: 6vw;
 }
 .sect-two__info p {
-  font-family: "lilita one";
-  font-size: 3vw;
-  color: white;
-  margin-left: 7vw;
-  margin-right: 7vw;
-  animation: moveWave 5s infinite;
+  z-index: 2;
 }
-.sect-two img {
-  animation: moveWave 3s infinite;
+.sect-two__info p:hover {
+  animation: moveWave 5s linear infinite;
+}
+.sect-two #Layer_2 {
+  position: absolute;
+  top: 18vw;
+  left: 45vw;
+  width: 10vw;
+  animation: flyingBird 25s linear infinite;
+}
+.sect-two #wave {
+  animation: moveWave 5s linear infinite;
   width: 100vw;
+  position: absolute;
+  bottom: 0;
 }
 
 .sect-three {
@@ -114,18 +122,9 @@ section {
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-}
-.sect-three h2 {
-  color: white;
-  font-family: "Lilita one";
-  font-size: 6vw;
+  position: relative;
 }
 .sect-three p {
-  color: white;
-  font-family: "Lilita one";
-  font-size: 3vw;
-  margin-right: 7vw;
-  margin-left: 7vw;
   margin-top: 3vw;
   z-index: 1;
 }
@@ -133,25 +132,26 @@ section {
   display: flex;
   flex-direction: column;
   margin-top: 5vw;
+  position: relative;
 }
 .sect-three__fishes #fish1 {
   width: 10vw;
   animation: fishSwim 25s linear infinite;
-  position: relative;
   top: 17vw;
-  z-index: 2;
 }
 .sect-three__fishes #fish2 {
   width: 8vw;
   animation: fishSwim 35s linear infinite;
-  position: relative;
   top: 8vw;
 }
 .sect-three #diver {
   width: 6vw;
   opacity: 30%;
-  position: relative;
+  position: absolute;
   left: 20vw;
+  transition: transform 0.3s ease;
+  top: 35vw;
+  left: 60vw;
 }
 
 .sect-four {
@@ -159,6 +159,19 @@ section {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+.sect-four hr {
+  width: 70vw;
+  border-radius: 6%;
+  margin-bottom: 10vh;
+}
+.sect-four hr::after {
+  content: "What can you do?";
+  position: absolute;
+  color: white;
+  font-size: 4vw;
+  bottom: 10vh;
 }
 
 .sect-five {
@@ -167,17 +180,7 @@ section {
   justify-content: space-between;
   align-items: center;
 }
-.sect-five h2 {
-  color: white;
-  font-family: "Lilita one";
-  font-size: 6vw;
-}
 .sect-five p {
-  color: white;
-  font-family: "Lilita one";
-  font-size: 3vw;
-  margin-right: 7vw;
-  margin-left: 7vw;
   margin-top: 3vw;
 }
 .sect-five p a {
@@ -215,7 +218,6 @@ section {
 }
 
 .reveal {
-  position: SpeechRecognitionAlternative;
   transform: translateY(50px);
   opacity: 0;
   transition: all 3s ease;
@@ -234,12 +236,35 @@ section {
     transform: translateX(80vw);
   }
 }
-@keyframes fishSwim {
+@keyframes flyingBird {
   0% {
-    transform: translateX(60vw);
+    transform: translateX(-55vw) translateY(0);
+  }
+  20% {
+    transform: translateX(-35vw) translateY(2.5vw); /* Gentle slope up */
+  }
+  40% {
+    transform: translateX(-15vw) translateY(-2.5vw); /* Peak of first wave */
+  }
+  50% {
+    transform: translateX(0) translateY(-5vw); /* Middle point at lowest dip */
+  }
+  60% {
+    transform: translateX(15vw) translateY(-2.5vw); /* Start ascent */
+  }
+  80% {
+    transform: translateX(35vw) translateY(2.5vw); /* Descent before final */
   }
   100% {
-    transform: translateX(-60vw);
+    transform: translateX(55vw) translateY(0); /* Return to horizontal line */
+  }
+}
+@keyframes fishSwim {
+  0% {
+    transform: translateX(70vw);
+  }
+  100% {
+    transform: translateX(-70vw);
   }
 }
 @keyframes moveWave {
@@ -258,44 +283,80 @@ section {
   p {
     font-size: 1.5rem;
   }
+  .sect-one {
+    background: linear-gradient(to bottom, #e57839, rgb(67, 198, 255));
+  }
   .sect-one__header,
   .sect-two__header,
   .sect-three__header,
-  .sect-four__header {
+  .sect-four__header,
+  .sect-five__header {
     flex-direction: column;
   }
   .sect-one__header h1,
   .sect-two__header h1,
   .sect-three__header h1,
-  .sect-four__header h1 {
+  .sect-four__header h1,
+  .sect-five__header h1 {
     position: relative;
     top: 30vw;
-    z-index: 1;
+    color: white;
   }
   .sect-one__header #sun,
   .sect-two__header #sun,
   .sect-three__header #sun,
-  .sect-four__header #sun {
+  .sect-four__header #sun,
+  .sect-five__header #sun {
     display: none;
   }
   .sect-one h2,
   .sect-two h2,
   .sect-three h2,
-  .sect-four h2 {
+  .sect-four h2,
+  .sect-five h2 {
     font-size: 2rem;
     margin-top: 5vw;
   }
   .sect-one p,
   .sect-two p,
   .sect-three p,
-  .sect-four p {
+  .sect-four p,
+  .sect-five p {
     font-size: 8vw;
   }
   .sect-one #wave,
   .sect-two #wave,
   .sect-three #wave,
-  .sect-four #wave {
+  .sect-four #wave,
+  .sect-five #wave {
     width: 100vw;
+  }
+  .sect-one #fish1,
+  .sect-two #fish1,
+  .sect-three #fish1,
+  .sect-four #fish1,
+  .sect-five #fish1 {
+    position: absolute;
+    top: 70vh;
+    width: 28vw;
+  }
+  .sect-one #fish2,
+  .sect-two #fish2,
+  .sect-three #fish2,
+  .sect-four #fish2,
+  .sect-five #fish2 {
+    position: absolute;
+    top: 60vh;
+    width: 22vw;
+  }
+  .sect-one #Layer_2,
+  .sect-two #Layer_2,
+  .sect-three #Layer_2,
+  .sect-four #Layer_2,
+  .sect-five #Layer_2 {
+    position: absolute;
+    top: 70vh;
+    width: 25vw;
   }
   .sect-one__clouds,
   .sect-three__fishes,
@@ -309,8 +370,4 @@ section {
     width: 50%;
     max-height: 100px;
   }
-}
-.sect-two img,
-.sect-four img {
-  width: 100%;
 }/*# sourceMappingURL=style.css.map */

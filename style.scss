@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lilita one';
 }
 
 .container {
@@ -21,6 +22,25 @@ section {
     width: 100%;
 }
 
+p {
+    margin-left: 7vw;
+    margin-right: 7vw;
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 6vw;
+    margin-top: 5vw;
+}
+
+
+
+
+
+
 .sect-one {
     background-color: rgb(67, 198, 255);
     align-items: center;
@@ -31,27 +51,15 @@ section {
 
         h1 {
             font-size: 9vw;
-            font-family: 'Lilita one';
             text-transform: uppercase;
             text-align: center;
             color: #046190;
+            z-index: 1;
         }
     }
 
     p {
-        font-size: 3vw;
-        font-family: 'Lilita one';
-        color: white;
-        margin-top: 10vw;
-        text-align: center;
-        margin-right: 7vw;
-        margin-left: 7vw;
-    }
-
-    h2 {
-        font-size: 4vw;
-        font-family: 'Lilita one';
-        color: white;
+        margin-top: 5vw;
     }
 
     &__header {
@@ -89,12 +97,17 @@ section {
 
 }
 
+
+
+
+
+
 .sect-two {
     background-color: rgb(67, 198, 255);
     flex-direction: column;
     overflow-y: hidden;
     justify-content: space-between;
-    background-attachment: local, local, scroll, scroll;
+    position: relative;
 
     &__info {
         display: flex;
@@ -102,28 +115,39 @@ section {
         flex-direction: column;
 
         h2 {
-            font-family: 'lilita one';
-            font-size: 5vw;
-            color: white;
             margin-bottom: 10vw;
             margin-top: 6vw;
         }
 
         p {
-            font-family: 'lilita one';
-            font-size: 3vw;
-            color: white;
-            margin-left: 7vw;
-            margin-right: 7vw;
-            animation: moveWave 5s infinite;
+            z-index: 2;
+        }
+
+        p:hover {
+            animation: moveWave 5s linear infinite;
         }
     }
 
-    img {
-        animation: moveWave 3s infinite;
+    #Layer_2 { 
+        position: absolute;
+        top: 18vw;
+        left: 45vw;
+        width: 10vw;
+        animation: flyingBird 25s linear infinite;
+    }
+
+    #wave {
+        animation: moveWave 5s linear infinite;
         width: 100vw;
+        position: absolute;
+        bottom: 0;
     }
 }
+
+
+
+
+
 
 
 .sect-three {
@@ -131,19 +155,9 @@ section {
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-
-    h2 {
-        color: white;
-        font-family: 'Lilita one';
-        font-size: 6vw;
-    }
+    position: relative;
 
     p {
-        color: white;
-        font-family: 'Lilita one';
-        font-size: 3vw;
-        margin-right: 7vw;
-        margin-left: 7vw;
         margin-top: 3vw;
         z-index: 1;
     }
@@ -153,19 +167,17 @@ section {
         display: flex;
         flex-direction: column;
         margin-top: 5vw;
+        position: relative;
 
         #fish1 {
             width: 10vw;
             animation: fishSwim 25s linear infinite;
-            position: relative;
             top: 17vw;
-            z-index: 2;
         }
 
         #fish2 {
             width: 8vw;
             animation: fishSwim 35s linear infinite;
-            position: relative;
             top: 8vw;
         }
     }
@@ -173,17 +185,43 @@ section {
     #diver {
         width: 6vw;
         opacity: 30%;
-        position: relative;
+        position: absolute;
         left: 20vw;
+        transition: transform 0.3s ease;
+        top: 35vw;
+        left: 60vw;
     }
 }
+
+
+
+
 
 .sect-four {
     background: linear-gradient(to bottom, #015892, #004471);
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    hr {
+        width: 70vw;
+        border-radius: 6%;
+        margin-bottom: 10vh;
+    }
+
+    hr::after {
+        content: 'What can you do?';
+        position: absolute;
+        color: white;
+        font-size: 4vw;
+        bottom: 10vh;
+    }
 }
+
+
+
+
 
 .sect-five {
     background: linear-gradient(to bottom, #004471, #00304f);
@@ -191,18 +229,7 @@ section {
     justify-content: space-between;
     align-items: center;
 
-    h2 {
-        color: white;
-        font-family: 'Lilita one';
-        font-size: 6vw;
-    }
-
     p {
-        color: white;
-        font-family: 'Lilita one';
-        font-size: 3vw;
-        margin-right: 7vw;
-        margin-left: 7vw;
         margin-top: 3vw;
 
         a {
@@ -251,7 +278,6 @@ section {
 }
 
 .reveal {
-    position: SpeechRecognitionAlternative;
     transform: translateY(50px);
     opacity: 0;
     transition: all 3s ease;
@@ -261,6 +287,10 @@ section {
        transform: translate(0px);
        opacity: 1;
    }
+
+
+
+
 
 @keyframes cloudGlide {
     0% {
@@ -273,13 +303,37 @@ section {
     }
 }
 
+@keyframes flyingBird {
+    0% {
+        transform: translateX(-55vw) translateY(0);
+    }
+    20% {
+        transform: translateX(-35vw) translateY(2.5vw); /* Gentle slope up */
+    }
+    40% {
+        transform: translateX(-15vw) translateY(-2.5vw); /* Peak of first wave */
+    }
+    50% {
+        transform: translateX(0) translateY(-5vw); /* Middle point at lowest dip */
+    }
+    60% {
+        transform: translateX(15vw) translateY(-2.5vw); /* Start ascent */
+    }
+    80% {
+        transform: translateX(35vw) translateY(2.5vw); /* Descent before final */
+    }
+    100% {
+        transform: translateX(55vw) translateY(0); /* Return to horizontal line */
+    }
+}
+
 @keyframes fishSwim {
     0% {
-        transform: translateX(60vw);
+        transform: translateX(70vw);
     }
 
     100% {
-        transform: translateX(-60vw);
+        transform: translateX(-70vw);
     }
 }
 
@@ -298,6 +352,11 @@ section {
     }
 }
 
+
+
+
+
+
 @media (max-width: 700px) {
 
     h2,
@@ -305,10 +364,15 @@ section {
         font-size: 1.5rem; // Reduserer fontstørrelsen
     }
 
+    .sect-one {
+    background: linear-gradient(to bottom, #e57839, rgb(67, 198, 255));
+    }
+
     .sect-one,
     .sect-two,
     .sect-three,
-    .sect-four {
+    .sect-four, 
+    .sect-five {
 
         &__header {
 
@@ -317,7 +381,7 @@ section {
             h1 {
                 position: relative;
                 top: 30vw;
-                z-index: 1;
+                color: white;
             }
 
             #sun {
@@ -338,23 +402,39 @@ section {
             width: 100vw;
         }
 
+        #fish1 {
+            position: absolute;
+            top: 70vh;
+            width: 28vw;
+        }
+
+        #fish2 {
+            position: absolute;
+            top: 60vh;
+            width: 22vw;
+        }
+
+        #Layer_2 {
+            position: absolute;
+            top: 70vh;
+            width: 25vw;
+        }
+
     }
 
     .sect-one__clouds,
     .sect-three__fishes,
     .ocean-floor {
         flex-direction: row;
-        flex-wrap: wrap; // Gjør at elementene kan brytes over flere linjer
+        flex-wrap: wrap;
 
         img {
-            width: 50%; // Justerer bildene til å ta halvparten av tilgjengelig bredde
-            max-height: 100px; // Begrenser bildenes høyde
+            width: 50%; 
+            max-height: 100px; 
         }
     }
 }
 
-// Andre spesifikke tilpasninger for responsivitet
-.sect-two img,
-.sect-four img {
-    width: 100%; // Sikrer at bilder ikke overstiger containerens bredde
+@media (prefers-reduced-motion: reduce) {
+    
 }
