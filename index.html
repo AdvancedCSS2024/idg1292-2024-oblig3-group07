@@ -58,10 +58,6 @@
       <img src="assets/SVG/diver.svg" alt="diver silouette" id="diver" />
     </section>
 
-    <section class="sect-four">
-
-    </section>
-
     <section class="sect-five">
       <h2>Make a change</h2>
       <p class="reveal">
@@ -78,27 +74,6 @@
       </div>
     </section>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        root: null, // observing relative to the viewport
-        rootMargin: '0px',
-        threshold: 0.5 // Trigger when 50% of the element is visible
-      });
-  
-      // Target elements with 'reveal' class
-      const targets = document.querySelectorAll('.reveal');
-      targets.forEach(target => {
-        observer.observe(target);
-      });
-    });
-  </script>  
 </body>
 
 </html>
