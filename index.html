@@ -40,52 +40,6 @@
         </p>
       </div>
 
-      <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336.07 126.67">
-        <defs>
-          <style>
-            .cls-1 {
-              fill: #bfeaff;
-            }
-
-            .cls-1,
-            .cls-2,
-            .cls-3,
-            .cls-4,
-            .cls-5 {
-              stroke: #000;
-              stroke-miterlimit: 10;
-              stroke-width: 2.83px;
-            }
-
-            .cls-2 {
-              fill: #ffd674;
-            }
-
-            .cls-3 {
-              fill: #fff;
-            }
-
-            .cls-5 {
-              fill: #bfeaff;
-            }
-          </style>
-        </defs>
-        <g id="Layer_1-2" data-name="Layer 1">
-          <g>
-            <path class="cls-1"
-              d="m232.94,47.57s24,1,38-13,14-14,3-20S232.94,1.98,232.94,1.98c0,0-18.19-2.66-26,3.59-5,4-55,3-55,3,0,0-39,2-53,9s-19.15,11.86-32.08,6.93S32.94,4.57,32.94,4.57c0,0,4,9,6,11s-13-1-13-1c0,0,19.29,11.86,9.65,9.93s-19.62,0-19.62,0c0,0,27.98,5.07,19.98,6.07s-27,4-27,4l49,8s18,5,23,16,40,6,40,6c0,0,88-5,112-17Z" />
-            <polygon class="cls-2" points="281.85 24.67 270.94 34.57 258.22 42.88 327.94 37.57 281.85 24.67" />
-            <path class="cls-5" d="m202.94,39.57c1,16-30,78-51,85s-27-42-29-51,0-30.69,0-30.69">
-              <animateTransform attributeType="xml" attributeName="transform" type="rotate"
-                values="0 202.94 39.57; 10 202.94 39.57; 0 202.94 39.57" keyTimes="0; 0.5; 1"
-                keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" dur="2s" repeatCount="indefinite" />
-            </path>
-            <ellipse class="cls-3" cx="236.94" cy="17.07" rx="11" ry="7.5" />
-            <circle class="cls-4" cx="242.44" cy="17.07" r="5.5" />
-          </g>
-        </g>
-      </svg>
-
       <img src="assets/SVG/wave.svg" alt="Big blue wave" id="wave" />
     </section>
 
@@ -124,27 +78,6 @@
       </div>
     </section>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        root: null, // observing relative to the viewport
-        rootMargin: '0px',
-        threshold: 0.5 // Trigger when 50% of the element is visible
-      });
-  
-      // Target elements with 'reveal' class
-      const targets = document.querySelectorAll('.reveal');
-      targets.forEach(target => {
-        observer.observe(target);
-      });
-    });
-  </script>  
 </body>
 
 </html>
