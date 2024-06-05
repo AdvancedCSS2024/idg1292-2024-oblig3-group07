@@ -84,7 +84,6 @@ h2 {
 .sect-two {
   background-color: rgb(67, 198, 255);
   flex-direction: column;
-  overflow-y: hidden;
   justify-content: space-between;
   position: relative;
 }
