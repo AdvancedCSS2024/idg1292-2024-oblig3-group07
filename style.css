@@ -217,17 +217,6 @@ h2 {
   z-index: 0;
 }
 
-.reveal {
-  transform: translateY(50px);
-  opacity: 0;
-  transition: all 3s ease;
-}
-
-.reveal.visible {
-  transform: translate(0px);
-  opacity: 1;
-}
-
 @keyframes cloudGlide {
   0% {
     transform: translateX(-95vw);
