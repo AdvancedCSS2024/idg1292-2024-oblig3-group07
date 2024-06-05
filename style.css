@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lilita one";
+}
+
+.container {
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  scroll-snap-align: start;
+  width: 100%;
+}
+
+p {
+  margin-left: 7vw;
+  margin-right: 7vw;
+  color: white;
+  font-size: 3vw;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  font-size: 6vw;
+  margin-top: 5vw;
+}
+
+.sect-one {
+  background-color: rgb(67, 198, 255);
+  align-items: center;
+  flex-direction: column;
+}
+.sect-one a {
+  text-decoration: none;
+}
+.sect-one a h1 {
+  font-size: 9vw;
+  text-transform: uppercase;
+  text-align: center;
+  color: #046190;
+  z-index: 1;
+}
+.sect-one p {
+  margin-top: 5vw;
+}
+.sect-one__header {
+  display: flex;
+  align-items: center;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.sect-one__clouds {
+  display: flex;
+  flex-direction: column;
+}
+.sect-one__clouds .cloud1 {
+  height: 120px;
+  margin-top: 40px;
+  animation: cloudGlide 40s linear infinite;
+}
+.sect-one__clouds .cloud2 {
+  height: 120px;
+  margin-top: 70px;
+  animation: cloudGlide 50s linear infinite;
+}
+.sect-one #sun {
+  height: 170px;
+  display: table-cell;
+  margin-top: 3vw;
+}
+
+.sect-two {
+  background-color: rgb(67, 198, 255);
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.sect-two__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sect-two__info h2 {
+  margin-bottom: 10vw;
+  margin-top: 6vw;
+}
+.sect-two__info p {
+  z-index: 2;
+}
+.sect-two__info p:hover {
+  animation: moveWave 5s linear infinite;
+}
+.sect-two #Layer_2 {
+  position: absolute;
+  top: 18vw;
+  left: 45vw;
+  width: 10vw;
+  animation: flyingBird 25s linear infinite;
+}
+.sect-two #wave {
+  animation: moveWave 5s linear infinite;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+.sect-three {
+  background: linear-gradient(to bottom, #0099ff, #015892);
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.sect-three p {
+  margin-top: 3vw;
+  z-index: 1;
+}
+.sect-three__fishes {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vw;
+  position: relative;
+}
+.sect-three__fishes #fish1 {
+  width: 10vw;
+  animation: fishSwim 25s linear infinite;
+  top: 17vw;
+}
+.sect-three__fishes #fish2 {
+  width: 8vw;
+  animation: fishSwim 35s linear infinite;
+  top: 8vw;
+}
+.sect-three #diver {
+  width: 6vw;
+  opacity: 30%;
+  position: absolute;
+  left: 20vw;
+  transition: transform 0.3s ease;
+  top: 35vw;
+  left: 60vw;
+}
+
+.sect-four {
+  background: linear-gradient(to bottom, #015892, #004471);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.sect-four hr {
+  width: 70vw;
+  border-radius: 6%;
+  margin-bottom: 10vh;
+}
+.sect-four hr::after {
+  content: "What can you do?";
+  position: absolute;
+  color: white;
+  font-size: 4vw;
+  bottom: 10vh;
+}
+
+.sect-five {
+  background: linear-gradient(to bottom, #004471, #00304f);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.sect-five p {
+  margin-top: 3vw;
+}
+.sect-five p a {
+  color: white;
+}
+.sect-five p a:hover {
+  color: lightgrey;
+}
+.sect-five .ocean-floor #greystone {
+  width: 15vw;
+  position: relative;
+  left: 3vw;
+  top: 8vw;
+  z-index: 1;
+}
+.sect-five .ocean-floor #titanic {
+  position: relative;
+  top: 9vw;
+  left: 28vw;
+  z-index: 1;
+  width: 15vw;
+}
+.sect-five .ocean-floor #plasticbottle {
+  width: 6vw;
+  position: relative;
+  top: 7vw;
+  z-index: 1;
+  left: 30vw;
+  transform: rotate(50deg);
+}
+.sect-five .ocean-floor #sand {
+  width: 100vw;
+  position: relative;
+  z-index: 0;
+}
+
+@keyframes cloudGlide {
+  0% {
+    transform: translateX(-95vw);
+  }
+  100% {
+    transform: translateX(80vw);
+  }
+}
+@keyframes flyingBird {
+  0% {
+    transform: translateX(-55vw) translateY(0);
+  }
+  20% {
+    transform: translateX(-35vw) translateY(2.5vw); /* Gentle slope up */
+  }
+  40% {
+    transform: translateX(-15vw) translateY(-2.5vw); /* Peak of first wave */
+  }
+  50% {
+    transform: translateX(0) translateY(-5vw); /* Middle point at lowest dip */
+  }
+  60% {
+    transform: translateX(15vw) translateY(-2.5vw); /* Start ascent */
+  }
+  80% {
+    transform: translateX(35vw) translateY(2.5vw); /* Descent before final */
+  }
+  100% {
+    transform: translateX(55vw) translateY(0); /* Return to horizontal line */
+  }
+}
+@keyframes fishSwim {
+  0% {
+    transform: translateX(70vw);
+  }
+  100% {
+    transform: translateX(-70vw);
+  }
+}
+@keyframes moveWave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1vw);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 700px) {
+  h2,
+  p {
+    font-size: 1.5rem;
+  }
+  .sect-one {
+    background: linear-gradient(to bottom, #e57839, rgb(67, 198, 255));
+  }
+  .sect-one__header,
+  .sect-two__header,
+  .sect-three__header,
+  .sect-four__header,
+  .sect-five__header {
+    flex-direction: column;
+  }
+  .sect-one__header h1,
+  .sect-two__header h1,
+  .sect-three__header h1,
+  .sect-four__header h1,
+  .sect-five__header h1 {
+    position: relative;
+    top: 30vw;
+    color: white;
+  }
+  .sect-one__header #sun,
+  .sect-two__header #sun,
+  .sect-three__header #sun,
+  .sect-four__header #sun,
+  .sect-five__header #sun {
+    display: none;
+  }
+  .sect-one h2,
+  .sect-two h2,
+  .sect-three h2,
+  .sect-four h2,
+  .sect-five h2 {
+    font-size: 2rem;
+    margin-top: 5vw;
+  }
+  .sect-one p,
+  .sect-two p,
+  .sect-three p,
+  .sect-four p,
+  .sect-five p {
+    font-size: 8vw;
+  }
+  .sect-one #wave,
+  .sect-two #wave,
+  .sect-three #wave,
+  .sect-four #wave,
+  .sect-five #wave {
+    width: 100vw;
+  }
+  .sect-one #fish1,
+  .sect-two #fish1,
+  .sect-three #fish1,
+  .sect-four #fish1,
+  .sect-five #fish1 {
+    position: absolute;
+    top: 70vh;
+    width: 28vw;
+  }
+  .sect-one #fish2,
+  .sect-two #fish2,
+  .sect-three #fish2,
+  .sect-four #fish2,
+  .sect-five #fish2 {
+    position: absolute;
+    top: 60vh;
+    width: 22vw;
+  }
+  .sect-one #Layer_2,
+  .sect-two #Layer_2,
+  .sect-three #Layer_2,
+  .sect-four #Layer_2,
+  .sect-five #Layer_2 {
+    position: absolute;
+    top: 70vh;
+    width: 25vw;
+  }
+  .sect-one__clouds,
+  .sect-three__fishes,
+  .ocean-floor {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sect-one__clouds img,
+  .sect-three__fishes img,
+  .ocean-floor img {
+    width: 50%;
+    max-height: 100px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lilita one';
+}
+
+.container {
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    scroll-snap-align: start;
+    width: 100%;
+}
+
+p {
+    margin-left: 7vw;
+    margin-right: 7vw;
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 6vw;
+    margin-top: 5vw;
+}
+
+
+
+
+
+
+.sect-one {
+    background-color: rgb(67, 198, 255);
+    align-items: center;
+    flex-direction: column;
+
+    a {
+        text-decoration: none;
+
+        h1 {
+            font-size: 9vw;
+            text-transform: uppercase;
+            text-align: center;
+            color: #046190;
+            z-index: 1;
+        }
+    }
+
+    p {
+        margin-top: 5vw;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-left: 7vw;
+        margin-right: 7vw;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    &__clouds {
+
+        display: flex;
+        flex-direction: column;
+
+        .cloud1 {
+            height: 120px;
+            margin-top: 40px;
+            animation: cloudGlide 40s linear infinite;
+        }
+
+        .cloud2 {
+            height: 120px;
+            margin-top: 70px;
+            animation: cloudGlide 50s linear infinite;
+        }
+    }
+
+    #sun {
+        height: 170px;
+        display: table-cell;
+        margin-top: 3vw;
+    }
+
+}
+
+
+
+
+
+
+.sect-two {
+    background-color: rgb(67, 198, 255);
+    flex-direction: column;
+    overflow-y: hidden;
+    justify-content: space-between;
+    position: relative;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+            margin-bottom: 10vw;
+            margin-top: 6vw;
+        }
+
+        p {
+            z-index: 2;
+        }
+
+        p:hover {
+            animation: moveWave 5s linear infinite;
+        }
+    }
+
+    #Layer_2 { 
+        position: absolute;
+        top: 18vw;
+        left: 45vw;
+        width: 10vw;
+        animation: flyingBird 25s linear infinite;
+    }
+
+    #wave {
+        animation: moveWave 5s linear infinite;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+.sect-three {
+    background: linear-gradient(to bottom, #0099ff, #015892);
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    p {
+        margin-top: 3vw;
+        z-index: 1;
+    }
+
+    &__fishes {
+
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vw;
+        position: relative;
+
+        #fish1 {
+            width: 10vw;
+            animation: fishSwim 25s linear infinite;
+            top: 17vw;
+        }
+
+        #fish2 {
+            width: 8vw;
+            animation: fishSwim 35s linear infinite;
+            top: 8vw;
+        }
+    }
+
+    #diver {
+        width: 6vw;
+        opacity: 30%;
+        position: absolute;
+        left: 20vw;
+        transition: transform 0.3s ease;
+        top: 35vw;
+        left: 60vw;
+    }
+}
+
+
+
+
+
+.sect-four {
+    background: linear-gradient(to bottom, #015892, #004471);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    hr {
+        width: 70vw;
+        border-radius: 6%;
+        margin-bottom: 10vh;
+    }
+
+    hr::after {
+        content: 'What can you do?';
+        position: absolute;
+        color: white;
+        font-size: 4vw;
+        bottom: 10vh;
+    }
+}
+
+
+
+
+
+.sect-five {
+    background: linear-gradient(to bottom, #004471, #00304f);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        margin-top: 3vw;
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            color: lightgrey;
+        }
+    }
+
+    .ocean-floor {
+
+        #greystone {
+            width: 15vw;
+            position: relative;
+            left: 3vw;
+            top: 8vw;
+            z-index: 1;
+        }
+
+        #titanic {
+
+            position: relative;
+            top: 9vw;
+            left: 28vw;
+            z-index: 1;
+            width: 15vw;
+        }
+
+        #plasticbottle {
+            width: 6vw;
+            position: relative;
+            top: 7vw;
+            z-index: 1;
+            left: 30vw;
+            transform: rotate(50deg);
+        }
+
+        #sand {
+            width: 100vw;
+            position: relative;
+            z-index: 0;
+        }
+    }
+}
+
+.reveal {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 3s ease;
+   }
+   
+.reveal.visible {
+       transform: translate(0px);
+       opacity: 1;
+   }
+
+
+
+
+
+@keyframes cloudGlide {
+    0% {
+        transform: translateX(-95vw);
+    }
+
+    100% {
+        transform: translateX(80vw);
+
+    }
+}
+
+@keyframes flyingBird {
+    0% {
+        transform: translateX(-55vw) translateY(0);
+    }
+    20% {
+        transform: translateX(-35vw) translateY(2.5vw); /* Gentle slope up */
+    }
+    40% {
+        transform: translateX(-15vw) translateY(-2.5vw); /* Peak of first wave */
+    }
+    50% {
+        transform: translateX(0) translateY(-5vw); /* Middle point at lowest dip */
+    }
+    60% {
+        transform: translateX(15vw) translateY(-2.5vw); /* Start ascent */
+    }
+    80% {
+        transform: translateX(35vw) translateY(2.5vw); /* Descent before final */
+    }
+    100% {
+        transform: translateX(55vw) translateY(0); /* Return to horizontal line */
+    }
+}
+
+@keyframes fishSwim {
+    0% {
+        transform: translateX(70vw);
+    }
+
+    100% {
+        transform: translateX(-70vw);
+    }
+}
+
+
+@keyframes moveWave {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(1vw);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+@media (max-width: 700px) {
+
+    h2,
+    p {
+        font-size: 1.5rem; // Reduserer fontstørrelsen
+    }
+
+    .sect-one {
+    background: linear-gradient(to bottom, #e57839, rgb(67, 198, 255));
+    }
+
+    .sect-one,
+    .sect-two,
+    .sect-three,
+    .sect-four, 
+    .sect-five {
+
+        &__header {
+
+            flex-direction: column;
+
+            h1 {
+                position: relative;
+                top: 30vw;
+                color: white;
+            }
+
+            #sun {
+                display: none;
+            }
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 5vw;
+        }
+
+        p {
+            font-size: 8vw;
+        }
+
+        #wave {
+            width: 100vw;
+        }
+
+        #fish1 {
+            position: absolute;
+            top: 70vh;
+            width: 28vw;
+        }
+
+        #fish2 {
+            position: absolute;
+            top: 60vh;
+            width: 22vw;
+        }
+
+        #Layer_2 {
+            position: absolute;
+            top: 70vh;
+            width: 25vw;
+        }
+
+    }
+
+    .sect-one__clouds,
+    .sect-three__fishes,
+    .ocean-floor {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        img {
+            width: 50%; 
+            max-height: 100px; 
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    
+}
